@@ -46,7 +46,7 @@ def emocao_int(emocao: str):
         return 3
     elif emocao in "😱😨":
         return 4
-    elif emocao in "🤪🥴":
+    elif emocao in "🤪🥴😵‍💫":
         return 5
     elif emocao in "😝😆😂🤣":
         return 6

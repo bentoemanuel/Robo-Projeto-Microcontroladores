@@ -21,15 +21,15 @@ def generator_worker(sentences: list, loop: asyncio.AbstractEventLoop, queue: as
             
     asyncio.run_coroutine_threadsafe(queue.put(None), loop)
 
-def generator_worker_one_sentence(i: int, sentence: str, emotion: str, loop: asyncio.AbstractEventLoop, queue: asyncio.Queue, voice: str="pm_alex"):
-    generator = pipeline(sentence, voice=voice, speed=1)
+def generator_worker_one_sentence(i: int, sentence: str, emotion: str, loop: asyncio.AbstractEventLoop, queue: asyncio.Queue):
+    generator = pipeline(sentence, voice='pm_alex', speed=1.55)
     
     for gs, ps, audio in generator:
         print(f"[Worker] Áudio gerado: {gs}")
         filename = f'{i}.wav'
         sf.write(filename, audio, 24000)
         
-        asyncio.run_coroutine_threadsafe(queue.put((sentence, filename, emotion)), loop)
+        asyncio.run_coroutine_threadsafe(queue.put((filename, emotion)), loop)
         
 async def process(text: str):
     loop = asyncio.get_running_loop()

@@ -16,3 +16,5 @@ A cada iteração, ele segue esses passsos:
 1. Rodar o código em main.py
 2. Apertar o botão "Gravar áudio" na interface
 3. 
+
+<img width="3589" height="1963" alt="Untitled Sketch_bb" src="https://github.com/user-attachments/assets/ea8f9b62-db7f-4e4f-b595-89ede69254be" />

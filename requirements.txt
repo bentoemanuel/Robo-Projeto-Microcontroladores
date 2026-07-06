@@ -1,0 +1,6 @@
+kokoro
+soundfile
+torch
+scipy
+sounddevice
+pyserial
